@@ -10,3 +10,5 @@ class Orange {
   	return diameters[Math.floor(Math.random()*diameters.length)]
   }
 }
+
+module.exports = Orange; 

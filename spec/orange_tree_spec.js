@@ -106,5 +106,12 @@ describe("OrangeTree", () => {
       expect(tree1.pickAnOrange()).toEqual("This tree has no oranges");
     });
   });
-
+  describe("averageOrangeDiameter", () => {
+    it("should return an orange from the tree", () => {
+      tree1 = new OrangeTree(15, 25);
+      tree1.passGrowingSeason()
+      tree1.averageOrangeDiameter();
+      expect(tree1.averageOrangeDiameter()).toBeTruthy(typeof(tree1.averageOrangeDiameter()) == 'number');
+    });
+  });
 });

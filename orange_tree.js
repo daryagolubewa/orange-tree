@@ -1,8 +1,10 @@
-class OrangeTree {
-  constructor(age, height, oranges = []) {
+ const orangeModule = require('./orange')
+
+ class OrangeTree {
+  constructor(age, height) {
     this.age = age; 
     this.height = height;
-    this.oranges = oranges;
+    this.oranges = [];
   }
 
   passGrowingSeason() {
@@ -13,18 +15,31 @@ class OrangeTree {
         }
         let random = Math.floor(Math.random() * (300 - 100) + 100); 
         for(let i = 0; i <= random; i++) {
-            this.oranges.push(new Orange());
+            this.oranges.push(new orangeModule());
         }
       }
       this.age++;
       if(this.height <= 22.5){
         this.height += 2.5 
-      }
-    console.log(this.age)
-    console.log(this.height)
-    console.log(this.oranges)
-
+      } return this.oranges
   }
+
+  // averageOrangeDiameter() {
+    
+  //   let averageDiameter = 0;
+  //   for(let i = 0; i < this.oranges.length; i++) {
+  //     averageDiameter += this.oranges[i].diameter;
+  //   }
+
+    
+  //   averageDiameter = averageDiameter / this.oranges.length;
+    
+  //   return averageDiameter
+  // }
+
+
+
+
 
   //  Returns true if the tree is old enough to bear fruit (6), false otherwise
   isMature(){
@@ -69,3 +84,4 @@ class OrangeTree {
 
 }
 
+module.exports = OrangeTree;
